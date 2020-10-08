@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/joho/godotenv"
+	"github.com/mdmims/go-azure-catalog-api/handler"
 	"log"
 	"os"
 )
@@ -14,7 +15,7 @@ func init() {
 }
 
 func main() {
-	a := App{}
+	a := handler.App{}
 
 	a.Initialize(
 		os.Getenv("DB_USERNAME"),

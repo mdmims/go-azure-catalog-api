@@ -1,12 +1,13 @@
 package main
 
 import (
+	"github.com/mdmims/go-azure-catalog-api/handler"
 	"log"
 	"os"
 	"testing"
 )
 
-var a App
+var a handler.App
 
 const tableCreationQuery = `CREATE TABLE IF NOT EXISTS asset_type
 (
