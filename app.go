@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"github.com/gorilla/mux"
+	_ "github.com/lib/pq"
 	"log"
 	"net/http"
 )
@@ -24,8 +25,6 @@ func (a *App) Initialize(user, password, dbname string) {
 	}
 
 	a.Router = mux.NewRouter()
-
-	a.initializeRoutes()
 }
 
 func (a *App) Run(addr string) {
@@ -33,3 +32,9 @@ func (a *App) Run(addr string) {
 }
 
 func (a *App) initializeRoutes() {}
+
+func logerr(_ int, err error) {
+	if err != nil {
+		log.Printf("Write failed: %v", err)
+	}
+}
