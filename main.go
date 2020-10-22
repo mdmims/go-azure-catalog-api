@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func init() {
+func initEnv() {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
@@ -15,6 +15,7 @@ func init() {
 }
 
 func main() {
+	initEnv()
 	a := handler.App{}
 
 	a.Initialize(
